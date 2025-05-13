@@ -27,7 +27,7 @@ async def scrape_todos():
     from options import username, password
 
     async with async_playwright() as p:
-        browser = await p.chromium.launch(headless=True)
+        browser = await p.chromium.launch(headless=True, args=["--no-sandbox"])
         page = await browser.new_page()
         await page.goto("https://goblin.tools/")
         await page.click("text=Log in")
