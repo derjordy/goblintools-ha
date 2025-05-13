@@ -2,6 +2,9 @@
   "name": "Goblin MagicToDo Integration",
   "version": "1.0",
   "slug": "goblin_todo_addon",
+  "arch": [
+      "amd64"
+    ],
   "description": "Integrates Goblin.tools Magic ToDo with Home Assistant",
   "startup": "services",
   "boot": "auto",
