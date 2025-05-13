@@ -1,6 +1,8 @@
 name: "Goblin MagicToDo Integration"
-version: "1.0"
+version: "1.0.0"
 slug: "goblin_todo_addon"
+description: >-
+  Integrates Goblin.tools Magic ToDo with Home Assistant.
 arch:
   - amd64
   - armv7
@@ -8,11 +10,11 @@ arch:
   - aarch64
 startup: "services"
 boot: "auto"
-homeassistant_api: false
 host_network: true
+homeassistant_api: false
 options:
-  username: "dein-benutzername"
-  password: "dein-passwort"
+  username: "your-username"
+  password: "your-password"
 schema:
   username:
     type: str

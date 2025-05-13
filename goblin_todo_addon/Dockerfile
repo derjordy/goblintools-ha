@@ -1,12 +1,18 @@
-FROM python:3.11-slim
+ARG BUILD_FROM
+FROM $BUILD_FROM
 
-RUN apt-get update && apt-get install -y curl unzip wget gnupg \
-    && pip install --no-cache-dir playwright flask \
-    && playwright install --with-deps chromium
+# Install dependencies
+RUN apk add --no-cache python3 py3-pip chromium nss
 
-WORKDIR /app
-COPY run.py /app/run.py
-COPY requirements.txt /app/requirements.txt
-COPY options.py /app/options.py
+# Install Python packages
+RUN pip3 install flask playwright && \
+    playwright install --with-deps chromium
 
-CMD ["python", "run.py"]
+# Copy addon files
+COPY run.sh /run.sh
+COPY run.py /run.py
+COPY options.py /options.py
+
+RUN chmod a+x /run.sh
+
+CMD [ "/run.sh" ]

@@ -1,5 +1,3 @@
-name: "Goblin Tools Home Assistant Add-ons"
-maintainer: "DerJordy.dev"
-url: "https://github.com/derjordy/goblintools-ha"
-addons:
-  - goblin_todo_addon
+name: Goblin Tools Home Assistant Add-ons
+url: https://github.com/derjordy/goblintools-ha
+maintainer: Jordy van Geneijgen <your.email@example.com>
