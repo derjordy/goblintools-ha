@@ -12,6 +12,7 @@ def get_todos():
 
 @app.route('/mark-done/<int:todo_id>', methods=['POST'])
 def mark_done(todo_id):
+    # Noch nicht implementiert
     return jsonify({"status": "not_implemented", "id": todo_id})
 
 @app.route('/refresh', methods=['POST'])
@@ -28,13 +29,14 @@ async def scrape_todos():
         page = await browser.new_page()
         await page.goto("https://goblin.tools/")
 
+        # Login
         await page.click("text=Log in")
         await page.fill("input[name=email]", username)
         await page.fill("input[name=password]", password)
         await page.click("button:has-text('Log in')")
-
         await page.wait_for_timeout(5000)
 
+        # Todos aus LocalStorage auslesen
         todos_json = await page.evaluate("localStorage.getItem('todos')")
         todos_data = json.loads(todos_json).get("todos", [])
 

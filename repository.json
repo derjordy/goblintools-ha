@@ -1,8 +1,0 @@
-{
-  "name": "Goblin Tools Home Assistant Add-ons",
-  "url": "https://github.com/derjordy/goblintools-ha",
-  "maintainer": "DerJordy>",
-  "addons": [
-    "goblin_todo_addon"
-  ]
-}

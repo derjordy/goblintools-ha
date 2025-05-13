@@ -1,0 +1,20 @@
+name: "Goblin MagicToDo Integration"
+version: "1.0"
+slug: "goblin_todo_addon"
+arch:
+  - amd64
+  - armv7
+  - armhf
+  - aarch64
+startup: "services"
+boot: "auto"
+homeassistant_api: false
+host_network: true
+options:
+  username: "dein-benutzername"
+  password: "dein-passwort"
+schema:
+  username:
+    type: str
+  password:
+    type: str
