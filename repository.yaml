@@ -1,3 +1,5 @@
 name: Goblin Tools Home Assistant Add-ons
 url: https://github.com/derjordy/goblintools-ha
-maintainer: Jordy van Geneijgen <your.email@example.com>
+maintainer: Jordy van Geneijgen <you@example.com>
+addons:
+  - goblin_todo_addon

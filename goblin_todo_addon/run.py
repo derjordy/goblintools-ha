@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 import asyncio
-from flask import Flask, jsonify, request
+from flask import Flask, jsonify
 from playwright.async_api import async_playwright
 import json
 
@@ -13,8 +13,8 @@ def get_todos():
 
 @app.route('/mark-done/<int:todo_id>', methods=['POST'])
 def mark_done(todo_id):
-    # Mark as done in UI
-    todos_data[:] = [t for t in todos_data if t.get("id") != todo_id]
+    global todos_data
+    todos_data = [t for t in todos_data if t.get("id") != todo_id]
     return jsonify({"status": "marked_done", "id": todo_id})
 
 @app.route('/refresh', methods=['POST'])
